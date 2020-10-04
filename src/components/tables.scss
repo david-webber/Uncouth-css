@@ -1,0 +1,32 @@
+table {
+    border: none;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    width: 100%;
+
+    caption {
+        padding:0.9rem;
+    }
+
+    thead {
+        text-align: left;
+
+        tr {
+            th {
+                background-color: var(--background-mid);
+                color: var(--text-main);
+                padding:0.9rem;
+            }
+        }
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            background-color: var(--background-mid);
+        }
+
+        td {
+            padding:0.9rem;
+        }
+    }
+}
