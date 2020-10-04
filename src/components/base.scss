@@ -1,19 +1,19 @@
-@import "./font_stacks.scss";
-$fontStack: $sans-serif-font;
+:root {
+  --border-radius: 0.2rem;
+}
 
 * {
-	box-sizing: border-box;
-	font-family: $fontStack;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 16px;
-	line-height: 1.25rem;
+  font-size: 16px;
+  line-height: 1.25rem;
 }
 
 body {
-	margin: auto;
-	max-width: 80vw;
-	background-color: var(--background-btm);
-	color: var(--text-main);
+  margin: auto;
+  max-width: 80vw;
+  background-color: var(--background-main);
+  color: var(--text-main);
 }

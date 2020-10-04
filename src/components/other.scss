@@ -1,12 +1,27 @@
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote {
-	border-left: 2px solid;
-	background-color: var(--background-mid);
-	margin: 0;
-	padding: 0.5rem 0 0.5rem 1.5rem;
-	font-style: italic;
+  border-left: 0.25rem solid;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-style: italic;
+}
+
+pre,
+code {
+  background-color: var(--background-mid);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-colour);
+  color: var(--text-muted);
+  padding: 0.15rem 0.3rem;
+}
+
+pre {
+  code {
+    border: none;
+    padding: none;
+  }
 }

@@ -1,23 +1,30 @@
 :root {
-  --background-btm: #f3f3f3;
+  --background-main: #f3f3f3;
   --background-mid: #f9f9f9;
   --text-main: #222;
   --text-emphasis: #000;
+  --text-muted: #6a6a6a;
+  --border-colour: #d5d5d5;
   --action-colour: #2549ac;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-btm: #222933;
+    --background-main: #222933;
     --background-mid: #272f3a;
     --text-main: #e5e5e5;
     --text-emphasis: #fff;
+    --text-muted: #8d9096;
+    --border-colour: #13161b;
     --action-colour: #6488ec;
   }
 }
+:root {
+  --border-radius: 0.2rem;
+}
+
 * {
   box-sizing: border-box;
-  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -28,7 +35,7 @@ html {
 body {
   margin: auto;
   max-width: 80vw;
-  background-color: var(--background-btm);
+  background-color: var(--background-main);
   color: var(--text-main);
 }
 
@@ -62,11 +69,28 @@ ul {
 }
 
 blockquote {
-  border-left: 2px solid;
-  background-color: var(--background-mid);
+  border-left: 0.25rem solid;
   margin: 0;
   padding: 0.5rem 0 0.5rem 1.5rem;
   font-style: italic;
+}
+
+pre,
+code {
+  background-color: var(--background-mid);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-colour);
+  color: var(--text-muted);
+  padding: 0.15rem 0.3rem;
+}
+
+pre code {
+  border: none;
+  padding: none;
+}
+
+* {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1,
@@ -108,6 +132,11 @@ h5 {
 
 h6 {
   font-size: 1.1rem;
+}
+
+pre,
+code {
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
 /*# sourceMappingURL=main.css.map */
