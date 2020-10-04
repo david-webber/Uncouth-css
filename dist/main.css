@@ -1,0 +1,35 @@
+:root {
+  --background: #f5f5f5;
+}
+
+:root {
+  --background: #191e25;
+  --text-main: #e5e5e5;
+  --text-emphasis: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--text-emphasis);
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=main.css.map */

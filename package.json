@@ -1,0 +1,34 @@
+{
+  "name": "uncouth-css",
+  "version": "1.0.0",
+  "description": "Another classless CSS library",
+  "main": "src/main.scss",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.26.11"
+  },
+  "config": {
+    "output": "./dist/main.css"
+  },
+  "scripts": {
+    "watch": "sass --watch $npm_package_main $npm_package_config_output",
+    "compile": "sass $npm_package_main $npm_package_config_output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-webber/Uncouth-css.git"
+  },
+  "keywords": [
+    "classless",
+    "css",
+    "library",
+    "uncouth",
+    "uncouth-css"
+  ],
+  "author": "David Webber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/david-webber/Uncouth-css/issues"
+  },
+  "homepage": "https://github.com/david-webber/Uncouth-css#readme"
+}
