@@ -14,3 +14,9 @@ Compile the sass using
 
 Watch & compile sass changes with
 `npm run watch`
+
+
+
+# Contributing
+
+When contributing to this repository, please first discuss the change you wish to make via issue. Please do not open a pull request until the issue has been assigned to you. If someone else has already been assigned to the issue, please let them complete the work, or ask for an update to find out if they have abandoned it. Thanks. 
