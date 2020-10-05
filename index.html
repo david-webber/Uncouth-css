@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uncouth CSS Demo</title>
-    <link rel="stylesheet" href="./dist/main.css" type="text/css" />
-  </head>
 
-  <body>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uncouth CSS Demo</title>
+  <link rel="stylesheet" href="./dist/main.css" type="text/css" />
+</head>
 
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-      corporis iusto <strong>emphasis</strong> veniam praesentium maiores,
-      commodi iste ipsum vel saepe illo labore qui sapiente earum incidunt
-      dolorem non. Adipisci, nostrum doloremque? <a href="#">Click me</a>
-    </p>
+<body>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
 
-    <blockquote>
-      "An SSL error occurred and the server could not be reached" - Albert
-      Einstein
-    </blockquote>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+    corporis iusto <strong>emphasis</strong> veniam praesentium maiores,
+    commodi iste ipsum vel saepe illo labore qui sapiente earum incidunt
+    dolorem non. Adipisci, nostrum doloremque? <a href="#">Click me</a>
+  </p>
 
-    <table>
-      <caption>
-        An example table with a caption
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Heading 1</th>
-          <th scope="col">Heading 2</th>
-          <th scope="col">Heading 3</th>
-        </tr>
-      </thead>
+  <blockquote>
+    "An SSL error occurred and the server could not be reached" - Albert
+    Einstein
+  </blockquote>
+
+  <table>
+    <caption>
+      An example table with a caption
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Heading 1</th>
+        <th scope="col">Heading 2</th>
+        <th scope="col">Heading 3</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td>Sample Data</td>
         <td>Sample Data</td>
@@ -53,14 +55,16 @@
         <td>Sample Data</td>
         <td>Sample Data</td>
       </tr>
-    </table>
+    </tbody>
+    <!-- TODO - add tablefooter -->
+  </table>
 
-    <p>
-      An example of a paragraph <code>&lt;p&gt;</code> that has inline code
-      <code>&lt;code&gt;</code> within it.
-    </p>
+  <p>
+    An example of a paragraph <code>&lt;p&gt;</code> that has inline code
+    <code>&lt;code&gt;</code> within it.
+  </p>
 
-    <pre>
+  <pre>
       Preformatted text, with a nested &lt;code&gt; block.
       <code>[{
           example:array,
@@ -70,15 +74,16 @@
         }]</code>
       </pre>
 
-    <form>
-      <label for="fname">First name:</label>
-      <input type="text" id="fname" name="fname" /><br /><br />
-      <label for="lname">Last name:</label>
-      <input type="text" id="lname" name="lname" /><br /><br />
-      <input type="submit" value="Submit" />
-    </form>
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" /><br /><br />
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" /><br /><br />
+    <input type="submit" value="Submit" />
+    <!-- TODO - add other form elements, see link below -->
+  </form>
 
-    <!--
+  <!--
       TODO - add address tag
       TODO - add dd tag
       TODO - add dl tag
@@ -98,5 +103,6 @@
       TODO - add dialogue tag
       TODO - add mark tag
     -->
-  </body>
+</body>
+
 </html>
