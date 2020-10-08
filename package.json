@@ -7,12 +7,9 @@
   "devDependencies": {
     "sass": "^1.26.11"
   },
-  "config": {
-    "output": "./dist/main.css"
-  },
   "scripts": {
-    "watch": "sass --watch $npm_package_main $npm_package_config_output",
-    "compile": "sass $npm_package_main $npm_package_config_output"
+    "watch": "sass --watch ./src/main.scss ./dist/main.css",
+    "compile": "sass ./src/main.scss ./dist/main.css"
   },
   "repository": {
     "type": "git",
