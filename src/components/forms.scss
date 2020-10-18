@@ -1,23 +1,304 @@
 form {
   display: block;
-  margin-top: 0em;
+  margin-top: 0;
   border-radius: 5px;
   padding-top: 20px;
 
-  input,
-  select {
-    border-radius: var(--border-radius);
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-colour);
+  label{
+    display: block;
   }
 
+  input, button, textarea, select{
+    &:focus{
+      outline: none;
+    }
+  }
+
+  input[type="text"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="file"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select,
+  textarea {
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: 38px;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border-colour);
+    background: var(--input-background);
+    color: var(--input-color);
+
+    &:focus{
+      border-color: var(--input-focus-color);
+      box-shadow: 0 0 0 2px var(--input-focus-color);
+    }
+
+    &[disabled]{
+      background: var(--input-disabled-background);
+      color: var(--input-disabled-color);
+      cursor: not-allowed;
+    }
+
+  }
+
+  input[type="range"]{
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+
+    &[disabled]{
+      cursor: not-allowed;
+
+      &::-webkit-slider-thumb {
+        background: var(--input-disabled-background);
+        cursor: not-allowed;
+      }
+
+      &::-moz-range-thumb {
+        background: var(--input-disabled-background);
+        cursor: not-allowed;
+      }
+
+      &::-webkit-slider-runnable-track {
+        background: var(--input-disabled-background);
+        cursor: not-allowed;
+      }
+
+      &::-moz-range-track{
+        background: var(--input-disabled-background);
+        cursor: not-allowed;
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      &::-webkit-slider-runnable-track {
+        border-color: var(--input-focus-color);
+        box-shadow: 0 0 0 2px var(--input-focus-color);
+      }
+
+      &::-moz-range-track{
+        border-color: var(--input-focus-color);
+        box-shadow: 0 0 0 2px var(--input-focus-color);
+      }
+    }
 
 
-  input[type="submit"] {
+    // Thumb -----------------
+
+    &::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      margin-top: -8px;
+      border: 1px solid var(--border-colour);
+      box-shadow: 1px 1px 1px rgba(black, 0.1);
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background: var(--action-button-background);
+      cursor: pointer;
+    }
+
+    &::-moz-range-thumb{
+      border: 1px solid var(--border-colour);
+      box-shadow: 1px 1px 1px rgba(black, 0.1);
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background: var(--action-button-background);
+      cursor: pointer;
+    }
+
+    // Track ------------------
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      background: var(--input-background);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-colour);
+    }
+
+    &::-moz-range-track{
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      background: var(--input-background);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-colour);
+    }
+
+  }
+
+  textarea{
+    resize: vertical;
+    min-height: 4rem;
+    padding: 0.75rem;
+  }
+
+  input[type="checkbox"], input[type="radio"]{
+    opacity: 0;
+
+    &:focus{
+      + label{
+        &:before{
+          border-color: var(--input-focus-color);
+          box-shadow: 0 0 0 2px var(--input-focus-color);
+        }
+      }
+    }
+
+    &[disabled]{
+      + label{
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    + label{
+      display: inline-block;
+      margin-left: 0.2rem;
+      margin-right: 1rem;
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        width: 18px;
+        height: 18px;
+        background: var(--input-background);
+        border: 1px solid var(--border-colour);
+        border-radius: var(--border-radius);
+        box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
+        transform: translate(0, -50%);
+        margin-top: -0.075rem;
+        margin-right: 0.2rem;
+      }
+    }
+  }
+
+  input[type="checkbox"]{
+    + label{
+      &:after{
+        display: none;
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        width: 3px;
+        height: 8px;
+        transform: translate(0, -50%) rotateZ(40deg);
+        margin-top: -0.135rem;
+        margin-right: 0.63rem;
+        border-right: 4px solid var(--action-button-color);
+        border-bottom: 4px solid var(--action-button-color);
+      }
+    }
+
+    &:checked{
+      + label{
+
+        &:before{
+          background: var(--action-button-background);
+        }
+
+        &:after{
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  input[type="radio"]{
+    + label{
+
+      &:before{
+        border-radius: 50%;
+      }
+
+      &:after{
+        display: none;
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        width: 9px;
+        height: 9px;
+        transform: translate(0, -50%);
+        background: var(--action-button-color);
+        margin-top: -0.075rem;
+        margin-right: 0.55rem;
+        border-radius: 50%;
+      }
+    }
+
+    &:checked{
+      + label{
+
+        &:before{
+          background: var(--action-button-background);
+        }
+
+        &:after{
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  %button{
+    border-radius: var(--border-radius);
+    padding: 0.75rem;
     border: none;
-    //extend button class here
+    width: auto;
     cursor: pointer;
+
+    &:focus{
+      border-color: var(--input-focus-color);
+      box-shadow: 0 0 0 2px var(--input-focus-color);
+    }
+
+    &[disabled]{
+      background: var(--button-disabled-background);
+      color: var(--button-disabled-color);
+      cursor: not-allowed;
+    }
+  }
+
+  input[type="submit"],
+  button[type="submit"] {
+    @extend %button;
+    background: var(--action-button-background);
+    color: var(--action-button-color);
+  }
+
+  input[type="button"],
+  button[type="button"]{
+    @extend %button;
+    background: var(--secondary-button-background);
+    color: var(--secondary-button-color);
+  }
+
+  input[type="reset"],
+  button[type="reset"]{
+    @extend %button;
+    background: var(--button-background);
+    color: var(--button-color);
   }
 
 }

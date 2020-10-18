@@ -6,4 +6,21 @@
   --text-muted: #8d9096;
   --border-colour: #13161b;
   --action-colour: #6488ec;
+  --input-background: #394452;
+  --input-color: #e5e5e5;
+  --input-focus-color: rgba(100, 136, 236, 0.4);
+  --input-disabled-background: #4b4b4c;
+  --input-disabled-color: #6b6e71;
+
+  --button-background: #768293;
+  --button-color: var(--text-main);
+
+  --action-button-background: var(--action-colour);
+  --action-button-color: var(--text-main);
+
+  --secondary-button-background: #60788b;
+  --secondary-button-color: var(--text-main);
+
+  --button-disabled-background: #3e3c3c;
+  --button-disabled-color: #777474;
 }
