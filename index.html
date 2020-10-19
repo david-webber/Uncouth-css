@@ -76,10 +76,92 @@
 
   <form>
     <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname" /><br /><br />
+    <input type="text" id="fname" name="fname" placeholder="John"><br /><br />
+
     <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname" /><br /><br />
-    <input type="submit" value="Submit" />
+    <input type="text" id="lname" name="lname" placeholder="Doe"><br /><br />
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" placeholder="Your full address"></textarea><br /><br />
+
+    <label for="countries">Countries:</label>
+    <select id="countries" name="countries">
+      <option>Japan</option>
+      <option>India</option>
+      <option>Italy</option>
+      <option>United States</option>
+    </select><br /><br />
+
+    <input type="checkbox" id="checkbox-01" name="checkbox[]" value="01" checked><label for="checkbox-01" tabindex="">Checkbox 01</label>
+    <input type="checkbox" id="checkbox-02" name="checkbox[]" value="02"><label for="checkbox-02">Checkbox 02</label>
+    <input type="checkbox" id="checkbox-03" name="checkbox[]" value="03"><label for="checkbox-03">Checkbox 03</label>
+    <input type="checkbox" id="checkbox-04" name="checkbox[]" value="04" disabled><label for="checkbox-04">Checkbox 04 Disabled</label>
+    <br><br>
+
+    <input type="radio" id="radio-01" name="radio" value="01" checked><label for="radio-01">Radio 01</label>
+    <input type="radio" id="radio-02" name="radio" value="02"><label for="radio-02">Radio 02</label>
+    <input type="radio" id="radio-03" name="radio" value="03"><label for="radio-03">Radio 03</label>
+    <input type="radio" id="radio-04" name="radio" value="04" disabled><label for="radio-04">Radio 04 Disabled</label>
+    <br><br>
+
+    <label for="color">Color Picker:</label>
+    <input id="color" type="color"><br><br>
+
+    <label for="date-picker">Date Picker:</label>
+    <input id="date-picker" type="date"><br><br>
+
+    <label for="date-picker-local">Date Picker Local:</label>
+    <input id="date-picker-local" type="datetime-local"><br><br>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email"><br><br>
+
+    <label for="file">File Chooser:</label>
+    <input id="file" type="file"><br><br>
+
+    <label for="month-picker">Month Picker:</label>
+    <input id="month-picker" type="month"><br><br>
+
+    <label for="number">Number:</label>
+    <input id="number" type="number"><br><br>
+
+    <label for="password">Password:</label>
+    <input id="password" type="password"><br><br>
+
+    <label for="range">Range:</label>
+    <input id="range" type="range"><br><br>
+
+
+    <label for="search">Search:</label>
+    <input id="search" type="search" placeholder="Type here to search..."><br><br>
+
+    <label for="telephone">Telephone:</label>
+    <input id="telephone" type="tel"><br><br>
+
+    <label for="time-chooser">Time Chooser:</label>
+    <input id="time-chooser" type="time"><br><br>
+
+    <label for="url">URL:</label>
+    <input id="url" type="url"><br><br>
+
+    <label for="week-chooser">Week Chooser:</label>
+    <input id="week-chooser" type="week"><br><br>
+
+
+    <label for="disabled-input">Disabled Input:</label>
+    <input id="disabled-input" type="text" disabled value="Disabled input content"><br><br>
+
+    <input type="reset" value="Reset Input">
+    <input type="button" value="Plain Button Input">
+    <input type="submit" value="Submit Input">
+    <input type="button" disabled value="Disabled Button Input">
+    <br><br>
+
+    <button type="reset">Reset Button</button>
+    <button type="button">Plain Button</button>
+    <button type="submit">Submit Button</button>
+    <button type="button" disabled>Disabled Button</button>
+    <br><br>
     <!-- TODO - add other form elements, see link below -->
   </form>
 

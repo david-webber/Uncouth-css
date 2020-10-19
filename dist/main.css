@@ -6,6 +6,19 @@
   --text-muted: #6a6a6a;
   --border-colour: #d5d5d5;
   --action-colour: #2549ac;
+  --input-background: #ffffff;
+  --input-color: var(--text-main);
+  --input-focus-color: rgba(37, 73, 172, 0.4);
+  --input-disabled-background: #ececec;
+  --input-disabled-color: #b8b8b8;
+  --button-background: #777778;
+  --button-color: var(--background-main);
+  --action-button-background: var(--action-colour);
+  --action-button-color: var(--background-main);
+  --secondary-button-background: #6c8693;
+  --secondary-button-color: var(--background-main);
+  --button-disabled-background: #d7d7d7;
+  --button-disabled-color: #929292;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +30,19 @@
     --text-muted: #8d9096;
     --border-colour: #13161b;
     --action-colour: #6488ec;
+    --input-background: #394452;
+    --input-color: #e5e5e5;
+    --input-focus-color: rgba(100, 136, 236, 0.4);
+    --input-disabled-background: #4b4b4c;
+    --input-disabled-color: #6b6e71;
+    --button-background: #768293;
+    --button-color: var(--text-main);
+    --action-button-background: var(--action-colour);
+    --action-button-color: var(--text-main);
+    --secondary-button-background: #60788b;
+    --secondary-button-color: var(--text-main);
+    --button-disabled-background: #3e3c3c;
+    --button-disabled-color: #777474;
   }
 }
 :root {
@@ -141,20 +167,269 @@ code {
 
 form {
   display: block;
-  margin-top: 0em;
+  margin-top: 0;
   border-radius: 5px;
   padding-top: 20px;
 }
-form input,
-form select {
+form label {
+  display: block;
+}
+form input:focus, form button:focus, form textarea:focus, form select:focus {
+  outline: none;
+}
+form input[type=text],
+form input[type=color],
+form input[type=date],
+form input[type=datetime-local],
+form input[type=email],
+form input[type=file],
+form input[type=month],
+form input[type=number],
+form input[type=password],
+form input[type=search],
+form input[type=tel],
+form input[type=time],
+form input[type=url],
+form input[type=week],
+form select,
+form textarea {
   border-radius: var(--border-radius);
   width: 100%;
-  padding: 0.75rem;
+  height: 38px;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border-colour);
+  background: var(--input-background);
+  color: var(--input-color);
+}
+form input[type=text]:focus,
+form input[type=color]:focus,
+form input[type=date]:focus,
+form input[type=datetime-local]:focus,
+form input[type=email]:focus,
+form input[type=file]:focus,
+form input[type=month]:focus,
+form input[type=number]:focus,
+form input[type=password]:focus,
+form input[type=search]:focus,
+form input[type=tel]:focus,
+form input[type=time]:focus,
+form input[type=url]:focus,
+form input[type=week]:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 2px var(--input-focus-color);
+}
+form input[type=text][disabled],
+form input[type=color][disabled],
+form input[type=date][disabled],
+form input[type=datetime-local][disabled],
+form input[type=email][disabled],
+form input[type=file][disabled],
+form input[type=month][disabled],
+form input[type=number][disabled],
+form input[type=password][disabled],
+form input[type=search][disabled],
+form input[type=tel][disabled],
+form input[type=time][disabled],
+form input[type=url][disabled],
+form input[type=week][disabled],
+form select[disabled],
+form textarea[disabled] {
+  background: var(--input-disabled-background);
+  color: var(--input-disabled-color);
+  cursor: not-allowed;
+}
+form input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+form input[type=range][disabled] {
+  cursor: not-allowed;
+}
+form input[type=range][disabled]::-webkit-slider-thumb {
+  background: var(--input-disabled-background);
+  cursor: not-allowed;
+}
+form input[type=range][disabled]::-moz-range-thumb {
+  background: var(--input-disabled-background);
+  cursor: not-allowed;
+}
+form input[type=range][disabled]::-webkit-slider-runnable-track {
+  background: var(--input-disabled-background);
+  cursor: not-allowed;
+}
+form input[type=range][disabled]::-moz-range-track {
+  background: var(--input-disabled-background);
+  cursor: not-allowed;
+}
+form input[type=range]:focus {
+  outline: none;
+}
+form input[type=range]:focus::-webkit-slider-runnable-track {
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 2px var(--input-focus-color);
+}
+form input[type=range]:focus::-moz-range-track {
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 2px var(--input-focus-color);
+}
+form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -8px;
+  border: 1px solid var(--border-colour);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--action-button-background);
+  cursor: pointer;
+}
+form input[type=range]::-moz-range-thumb {
+  border: 1px solid var(--border-colour);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--action-button-background);
+  cursor: pointer;
+}
+form input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: var(--input-background);
+  border-radius: var(--border-radius);
   border: 1px solid var(--border-colour);
 }
-form input[type=submit] {
-  border: none;
+form input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
   cursor: pointer;
+  background: var(--input-background);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-colour);
+}
+form textarea {
+  resize: vertical;
+  min-height: 4rem;
+  padding: 0.75rem;
+}
+form input[type=checkbox], form input[type=radio] {
+  opacity: 0;
+}
+form input[type=checkbox]:focus + label:before, form input[type=radio]:focus + label:before {
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 2px var(--input-focus-color);
+}
+form input[type=checkbox][disabled] + label, form input[type=radio][disabled] + label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+form input[type=checkbox] + label, form input[type=radio] + label {
+  display: inline-block;
+  margin-left: 0.2rem;
+  margin-right: 1rem;
+  position: relative;
+}
+form input[type=checkbox] + label:before, form input[type=radio] + label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 18px;
+  height: 18px;
+  background: var(--input-background);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  transform: translate(0, -50%);
+  margin-top: -0.075rem;
+  margin-right: 0.2rem;
+}
+form input[type=checkbox] + label:after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 3px;
+  height: 8px;
+  transform: translate(0, -50%) rotateZ(40deg);
+  margin-top: -0.135rem;
+  margin-right: 0.63rem;
+  border-right: 4px solid var(--action-button-color);
+  border-bottom: 4px solid var(--action-button-color);
+}
+form input[type=checkbox]:checked + label:before {
+  background: var(--action-button-background);
+}
+form input[type=checkbox]:checked + label:after {
+  display: block;
+}
+form input[type=radio] + label:before {
+  border-radius: 50%;
+}
+form input[type=radio] + label:after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 9px;
+  height: 9px;
+  transform: translate(0, -50%);
+  background: var(--action-button-color);
+  margin-top: -0.075rem;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+}
+form input[type=radio]:checked + label:before {
+  background: var(--action-button-background);
+}
+form input[type=radio]:checked + label:after {
+  display: block;
+}
+form input[type=reset],
+form button[type=reset], form input[type=button],
+form button[type=button], form input[type=submit],
+form button[type=submit] {
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  border: none;
+  width: auto;
+  cursor: pointer;
+}
+form input[type=reset]:focus,
+form button[type=reset]:focus, form input[type=button]:focus,
+form button[type=button]:focus, form input[type=submit]:focus,
+form button[type=submit]:focus {
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 2px var(--input-focus-color);
+}
+form input[disabled][type=reset],
+form button[disabled][type=reset], form input[disabled][type=button],
+form button[disabled][type=button], form input[disabled][type=submit],
+form button[disabled][type=submit] {
+  background: var(--button-disabled-background);
+  color: var(--button-disabled-color);
+  cursor: not-allowed;
+}
+form input[type=submit],
+form button[type=submit] {
+  background: var(--action-button-background);
+  color: var(--action-button-color);
+}
+form input[type=button],
+form button[type=button] {
+  background: var(--secondary-button-background);
+  color: var(--secondary-button-color);
+}
+form input[type=reset],
+form button[type=reset] {
+  background: var(--button-background);
+  color: var(--button-color);
 }
 
 /*# sourceMappingURL=main.css.map */
