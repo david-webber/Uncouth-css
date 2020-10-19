@@ -4,12 +4,15 @@ form {
   border-radius: 5px;
   padding-top: 20px;
 
-  label{
+  label {
     display: block;
   }
 
-  input, button, textarea, select{
-    &:focus{
+  input,
+  button,
+  textarea,
+  select {
+    &:focus {
       outline: none;
     }
   }
@@ -32,18 +35,18 @@ form {
   textarea {
     border-radius: var(--border-radius);
     width: 100%;
-    height: 38px;
-    padding: 0.4rem 0.75rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 0.5rem 0;
     border: 1px solid var(--border-colour);
     background: var(--input-background);
     color: var(--input-color);
 
-    &:focus{
+    &:focus {
       border-color: var(--input-focus-color);
       box-shadow: 0 0 0 2px var(--input-focus-color);
     }
 
-    &[disabled]{
+    &[disabled] {
       background: var(--input-disabled-background);
       color: var(--input-disabled-color);
       cursor: not-allowed;
@@ -51,12 +54,12 @@ form {
 
   }
 
-  input[type="range"]{
+  input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
     background: transparent;
 
-    &[disabled]{
+    &[disabled] {
       cursor: not-allowed;
 
       &::-webkit-slider-thumb {
@@ -74,7 +77,7 @@ form {
         cursor: not-allowed;
       }
 
-      &::-moz-range-track{
+      &::-moz-range-track {
         background: var(--input-disabled-background);
         cursor: not-allowed;
       }
@@ -88,7 +91,7 @@ form {
         box-shadow: 0 0 0 2px var(--input-focus-color);
       }
 
-      &::-moz-range-track{
+      &::-moz-range-track {
         border-color: var(--input-focus-color);
         box-shadow: 0 0 0 2px var(--input-focus-color);
       }
@@ -97,7 +100,7 @@ form {
 
     // Thumb -----------------
 
-    &::-webkit-slider-thumb{
+    &::-webkit-slider-thumb {
       -webkit-appearance: none;
       margin-top: -8px;
       border: 1px solid var(--border-colour);
@@ -109,7 +112,7 @@ form {
       cursor: pointer;
     }
 
-    &::-moz-range-thumb{
+    &::-moz-range-thumb {
       border: 1px solid var(--border-colour);
       box-shadow: 1px 1px 1px rgba(black, 0.1);
       height: 24px;
@@ -130,7 +133,7 @@ form {
       border: 1px solid var(--border-colour);
     }
 
-    &::-moz-range-track{
+    &::-moz-range-track {
       width: 100%;
       height: 8.4px;
       cursor: pointer;
@@ -141,38 +144,39 @@ form {
 
   }
 
-  textarea{
+  textarea {
     resize: vertical;
     min-height: 4rem;
     padding: 0.75rem;
   }
 
-  input[type="checkbox"], input[type="radio"]{
+  input[type="checkbox"],
+  input[type="radio"] {
     opacity: 0;
 
-    &:focus{
-      + label{
-        &:before{
+    &:focus {
+      +label {
+        &:before {
           border-color: var(--input-focus-color);
           box-shadow: 0 0 0 2px var(--input-focus-color);
         }
       }
     }
 
-    &[disabled]{
-      + label{
+    &[disabled] {
+      +label {
         opacity: 0.5;
         cursor: not-allowed;
       }
     }
 
-    + label{
+    +label {
       display: inline-block;
       margin-left: 0.2rem;
       margin-right: 1rem;
       position: relative;
 
-      &:before{
+      &:before {
         content: '';
         position: absolute;
         top: 50%;
@@ -190,9 +194,9 @@ form {
     }
   }
 
-  input[type="checkbox"]{
-    + label{
-      &:after{
+  input[type="checkbox"] {
+    +label {
+      &:after {
         display: none;
         content: '';
         position: absolute;
@@ -208,14 +212,14 @@ form {
       }
     }
 
-    &:checked{
-      + label{
+    &:checked {
+      +label {
 
-        &:before{
+        &:before {
           background: var(--action-button-background);
         }
 
-        &:after{
+        &:after {
           display: block;
         }
       }
@@ -223,14 +227,14 @@ form {
 
   }
 
-  input[type="radio"]{
-    + label{
+  input[type="radio"] {
+    +label {
 
-      &:before{
+      &:before {
         border-radius: 50%;
       }
 
-      &:after{
+      &:after {
         display: none;
         content: '';
         position: absolute;
@@ -246,14 +250,14 @@ form {
       }
     }
 
-    &:checked{
-      + label{
+    &:checked {
+      +label {
 
-        &:before{
+        &:before {
           background: var(--action-button-background);
         }
 
-        &:after{
+        &:after {
           display: block;
         }
       }
@@ -261,19 +265,19 @@ form {
 
   }
 
-  %button{
+  %button {
     border-radius: var(--border-radius);
     padding: 0.75rem;
     border: none;
     width: auto;
     cursor: pointer;
 
-    &:focus{
+    &:focus {
       border-color: var(--input-focus-color);
       box-shadow: 0 0 0 2px var(--input-focus-color);
     }
 
-    &[disabled]{
+    &[disabled] {
       background: var(--button-disabled-background);
       color: var(--button-disabled-color);
       cursor: not-allowed;
@@ -288,14 +292,14 @@ form {
   }
 
   input[type="button"],
-  button[type="button"]{
+  button[type="button"] {
     @extend %button;
     background: var(--secondary-button-background);
     color: var(--secondary-button-color);
   }
 
   input[type="reset"],
-  button[type="reset"]{
+  button[type="reset"] {
     @extend %button;
     background: var(--button-background);
     color: var(--button-color);
