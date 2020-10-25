@@ -168,8 +168,11 @@ code {
 form {
   display: block;
   margin-top: 0;
-  border-radius: 5px;
-  padding-top: 20px;
+}
+form fieldset {
+  border: 1px solid var(--border-colour);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
 }
 form label {
   display: block;
@@ -180,12 +183,14 @@ form textarea:focus,
 form select:focus {
   outline: none;
 }
+form input, form select, form textarea {
+  margin: 0 0 0.5rem 0;
+}
 form input[type=text],
 form input[type=color],
 form input[type=date],
 form input[type=datetime-local],
 form input[type=email],
-form input[type=file],
 form input[type=month],
 form input[type=number],
 form input[type=password],
@@ -198,18 +203,16 @@ form select,
 form textarea {
   border-radius: var(--border-radius);
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  margin: 0 0 0.5rem 0;
   border: 1px solid var(--border-colour);
   background: var(--input-background);
   color: var(--input-color);
+  padding: 0.5rem 0.75rem;
 }
 form input[type=text]:focus,
 form input[type=color]:focus,
 form input[type=date]:focus,
 form input[type=datetime-local]:focus,
 form input[type=email]:focus,
-form input[type=file]:focus,
 form input[type=month]:focus,
 form input[type=number]:focus,
 form input[type=password]:focus,
@@ -228,7 +231,6 @@ form input[type=color][disabled],
 form input[type=date][disabled],
 form input[type=datetime-local][disabled],
 form input[type=email][disabled],
-form input[type=file][disabled],
 form input[type=month][disabled],
 form input[type=number][disabled],
 form input[type=password][disabled],

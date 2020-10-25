@@ -1,8 +1,12 @@
 form {
   display: block;
   margin-top: 0;
-  border-radius: 5px;
-  padding-top: 20px;
+
+  fieldset{
+    border:1px solid var(--border-colour);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+  }
 
   label {
     display: block;
@@ -17,12 +21,15 @@ form {
     }
   }
 
+  input,select,textarea{
+    margin: 0 0 0.5rem 0;
+  }
+
   input[type="text"],
   input[type="color"],
   input[type="date"],
   input[type="datetime-local"],
   input[type="email"],
-  input[type="file"],
   input[type="month"],
   input[type="number"],
   input[type="password"],
@@ -35,12 +42,10 @@ form {
   textarea {
     border-radius: var(--border-radius);
     width: 100%;
-    padding: 0.5rem 0.75rem;
-    margin: 0 0 0.5rem 0;
     border: 1px solid var(--border-colour);
     background: var(--input-background);
     color: var(--input-color);
-
+    padding: 0.5rem 0.75rem;
     &:focus {
       border-color: var(--input-focus-color);
       box-shadow: 0 0 0 2px var(--input-focus-color);
