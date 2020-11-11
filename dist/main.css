@@ -1,12 +1,12 @@
 :root {
-  --background-main: #f3f3f3;
-  --background-mid: #f9f9f9;
+  --background-main: #f4f4f4;
+  --background-mid: #fcfcfc;
+  --background-dark: rgb(231, 231, 231);
   --text-main: #222;
   --text-emphasis: #000;
   --text-muted: #6a6a6a;
   --border-colour: #d5d5d5;
   --action-colour: #2549ac;
-  --input-background: #ffffff;
   --input-color: var(--text-main);
   --input-focus-color: rgba(37, 73, 172, 0.4);
   --input-disabled-background: #ececec;
@@ -23,14 +23,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-main: #222933;
-    --background-mid: #272f3a;
+    --background-main: #13171b;
+    --background-mid: #242a35;
+    --background-dark: #0f1113;
     --text-main: #e5e5e5;
-    --text-emphasis: #fff;
-    --text-muted: #8d9096;
-    --border-colour: #13161b;
+    --text-emphasis: #f3f3f3;
+    --text-muted: #b8bfc7;
+    --border-colour: #3a404b;
     --action-colour: #6488ec;
-    --input-background: #394452;
+    --input-background: #242a35;
     --input-color: #e5e5e5;
     --input-focus-color: rgba(100, 136, 236, 0.4);
     --input-disabled-background: #4b4b4c;
@@ -65,6 +66,10 @@ body {
   color: var(--text-main);
 }
 
+strong {
+  color: var(--text-emphasis);
+}
+
 table {
   border: none;
   border-collapse: collapse;
@@ -80,22 +85,31 @@ table thead {
 table thead tr th {
   background-color: var(--background-mid);
   color: var(--text-main);
-  padding: 0.9rem;
 }
 table tbody tr:nth-child(even) {
   background-color: var(--background-mid);
 }
-table tbody td {
+table tfoot {
+  background-color: var(--background-dark);
+}
+table tfoot td {
+  padding: 0.45rem 0.9rem;
+}
+table th, table td {
   padding: 0.9rem;
 }
 
-ol,
-ul {
-  list-style: none;
+dt {
+  font-weight: bold;
+  color: var(--text-emphasis);
+}
+
+dd {
+  margin: 0.5rem 0rem 0.5rem 1.5rem;
 }
 
 blockquote {
-  border-left: 0.25rem solid;
+  border-left: 0.25rem solid var(--border-colour);
   margin: 0;
   padding: 0.5rem 0 0.5rem 1.5rem;
   font-style: italic;
@@ -107,12 +121,21 @@ code {
   border-radius: var(--border-radius);
   border: 1px solid var(--border-colour);
   color: var(--text-muted);
-  padding: 0.15rem 0.3rem;
+  padding: 0.1rem 0.2rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
 }
 
 pre code {
   border: none;
   padding: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-colour);
+  margin: 2rem 0;
 }
 
 * {
@@ -131,38 +154,55 @@ strong {
   margin-bottom: 1.1rem;
   margin-top: 1em;
 }
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+strong small {
+  color: var(--text-muted);
+}
 
 a {
   color: var(--action-colour);
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 h6 {
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+small {
+  font-size: 70%;
 }
 
 pre,
 code {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+fieldset {
+  border: 1px solid var(--border-colour);
 }
 
 form {
@@ -173,6 +213,7 @@ form {
 }
 form label {
   display: block;
+  margin: 0.5rem 0;
 }
 form input:focus,
 form button:focus,
@@ -200,9 +241,9 @@ form textarea {
   width: 100%;
   padding: 0.5rem 0.75rem;
   margin: 0 0 0.5rem 0;
-  border: 1px solid var(--border-colour);
+  border: none;
   background: var(--input-background);
-  color: var(--input-color);
+  color: var(--text-main);
 }
 form input[type=text]:focus,
 form input[type=color]:focus,
@@ -243,6 +284,9 @@ form textarea[disabled] {
   color: var(--input-disabled-color);
   cursor: not-allowed;
 }
+form input[type=color] {
+  padding: none;
+}
 form input[type=range] {
   -webkit-appearance: none;
   width: 100%;
@@ -281,7 +325,7 @@ form input[type=range]:focus::-moz-range-track {
 form input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -8px;
-  border: 1px solid var(--border-colour);
+  border: none;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   height: 24px;
   width: 24px;
@@ -290,7 +334,7 @@ form input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 form input[type=range]::-moz-range-thumb {
-  border: 1px solid var(--border-colour);
+  border: none;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   height: 24px;
   width: 24px;
@@ -302,17 +346,17 @@ form input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
-  background: var(--input-background);
+  background: var(--background-mid);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
+  border: none;
 }
 form input[type=range]::-moz-range-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
-  background: var(--input-background);
+  background: var(--background-mid);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
+  border: none;
 }
 form textarea {
   resize: vertical;
@@ -348,10 +392,8 @@ form input[type=radio] + label:before {
   right: 100%;
   width: 18px;
   height: 18px;
-  background: var(--input-background);
-  border: 1px solid var(--border-colour);
+  background: var(--text-main);
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
   transform: translate(0, -50%);
   margin-top: -0.075rem;
   margin-right: 0.2rem;
@@ -438,6 +480,29 @@ form input[type=reset],
 form button[type=reset] {
   background: var(--button-background);
   color: var(--button-color);
+}
+
+img, video, audio {
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+nav ul li:first-of-type {
+  margin-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

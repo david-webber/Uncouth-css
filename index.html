@@ -9,25 +9,56 @@
 </head>
 
 <body>
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
 
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-    corporis iusto <strong>emphasis</strong> veniam praesentium maiores,
-    commodi iste ipsum vel saepe illo labore qui sapiente earum incidunt
-    dolorem non. Adipisci, nostrum doloremque? <a href="#">Click me</a>
-  </p>
+  <h1>Uncouth CSS</h1>
+  <p>A(nother) minimalist, classless css library to improve markup sites, or use as a base style for your next project!</p>
+  <a href="#">Download</a>
 
-  <blockquote>
-    "An SSL error occurred and the server could not be reached" - Albert
-    Einstein
-  </blockquote>
 
+
+  <h3>Navigation</h3>
+  <nav>
+    <ul>
+      <li>
+        <a href="#">Lists</a>
+      </li>
+      <li>
+        <a href="#">Tables</a>
+      </li>
+      <li>
+        <a href="#">Typography</a>
+      </li>
+      <li>
+        <a href="#">Media</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <hr />
+  <h3>Lists</h3>
+  <p>Unordered Lists <code>&lt;ul&gt;&lt;li&gt;</code></p>
+  <ul>
+    <li>Bulleted List item</li>
+    <li>Another list item</li>
+    <li>Some other thing</li>
+  </ul>
+  <p>Ordered Lists <code>&lt;ol&gt;&lt;li&gt;</code></p>
+  <ol>
+    <li>Can you guess it yet?</li>
+    <li>I don't know what to write here...</li>
+    <li>...At least it is in order.</li>
+  </ol>
+  <p>Detail Lists <code>&lt;dt&gt;&lt;dd&gt;</code></p>
+  <dl>
+    <dt>Description 1</dt>
+    <dd>This is the first description list</dd>
+    <dt>Description 2</dt>
+    <dd>This is the second descriptive list</dd>
+  </dl>
+  <hr />
+  <h3>Tables</h3>
   <table>
     <caption>
       An example table with a caption
@@ -50,19 +81,54 @@
         <td>Sample Data</td>
         <td>Sample Data</td>
       </tr>
-      <tr>
-        <td>Sample Data</td>
-        <td>Sample Data</td>
-        <td>Sample Data</td>
-      </tr>
-    </tbody>
-    <!-- TODO - add tablefooter -->
-  </table>
 
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Footer Data</td>
+        <td>Footer Data</td>
+        <td>Footer Data</td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr />
+  <h3>Typography</h3>
+  <h6>Paragraphs &amp; inline text elements:</h6>
   <p>
-    An example of a paragraph <code>&lt;p&gt;</code> that has inline code
-    <code>&lt;code&gt;</code> within it.
+    Here is some example text within a paragraph tag. This paragraph contains an inline <strong>strong</strong> tag and an inline <i>italic</i> tag.</p>
+  <p>
+    An example of a paragraph that has inline code <code>&lt;code&gt;</code> block within it.
   </p>
+  <p>
+    <details>
+      <summary>Show Headings</summary>
+      <h1>Heading 1 <small>Small</small></h1>
+      <h2>Heading 2 <small>Small</small></h2>
+      <h3>Heading 3 <small>Small</small></h3>
+      <h4>Heading 4 <small>Small</small></h4>
+      <h5>Heading 5 <small>Small</small></h5>
+      <h6>Heading 6 <small>Small</small></h6>
+    </details>
+  </p>
+  <h6>Quotes:</h6>
+  <blockquote>
+    <p>
+      "An SSL error occurred and the server could not be reached"
+    </p>
+    -
+    <cite>Albert Einstein</cite>
+  </blockquote>
+
+  <hr />
+
+  <h3>Media</h3>
+  <p>Images, videos and audio elements are responsive:</p>
+  <p></p>
+  <img src="https://picsum.photos/800/250" />
+  <figcaption>Image powered by <a href="https://picsum.photos/" target="_blank" rel="noopener noreferrer">https://picsum.photos/</a></figcaption>
+
+  <hr />
+  <h3>Preformatted / Code</h3>
 
   <pre>
       Preformatted text, with a nested &lt;code&gt; block.
@@ -74,6 +140,8 @@
         }]</code>
       </pre>
 
+  <hr />
+  <h3>Forms</h3>
   <form>
     <label for="fname">First name:</label>
     <input type="text" id="fname" name="fname" placeholder="John">
@@ -147,6 +215,18 @@
     <button type="submit">Submit Button</button>
     <button type="button" disabled>Disabled Button</button>
   </form>
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!--
       TODO - add address tag
