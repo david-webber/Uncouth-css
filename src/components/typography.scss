@@ -16,6 +16,9 @@ strong {
   font-weight: bold;
   margin-bottom: 1.1rem;
   margin-top: 1em;
+  small{
+    color: var(--text-muted);
+  }
 }
 
 a {
@@ -23,27 +26,31 @@ a {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 h6 {
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+small{
+  font-size:70%;
 }
 
 pre,
