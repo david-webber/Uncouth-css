@@ -131,9 +131,9 @@
   <h3>Preformatted / Code</h3>
 
   <pre>
-      Preformatted text, with a nested &lt;code&gt; block.
+    Preformatted text, with a nested &lt;code&gt; block.
       <code>[{
-          example:array,
+        example:array,
         },
         {
           of: objects
@@ -149,21 +149,30 @@
     <label for="lname">Last name:</label>
     <input type="text" id="lname" name="lname" placeholder="Doe">
 
-    <label for="address">Address:</label>
-    <textarea id="address" name="address" placeholder="Your full address"></textarea>
-
-    <label for="countries">Countries:</label>
-    <select id="countries" name="countries">
-      <option>Japan</option>
-      <option>India</option>
-      <option>Italy</option>
-      <option>United States</option>
-    </select><br><br>
 
 
-    <input type="checkbox" id="checkbox-01" name="checkbox[]" value="01" checked><label for="checkbox-01" tabindex="">Checkbox 01</label>
-    <input type="checkbox" id="checkbox-02" name="checkbox[]" value="02"><label for="checkbox-02">Checkbox 02</label>
-    <input type="checkbox" id="checkbox-03" name="checkbox[]" value="03"><label for="checkbox-03">Checkbox 03</label>
+
+  <form>
+    <fieldset>
+      <legend>Form</legend>
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" name="fname" placeholder="John">
+
+
+      <label for="countries">Countries:</label>
+      <select id="countries" name="countries">
+        <option>Japan</option>
+        <option>India</option>
+        <option>Italy</option>
+        <option>United States</option>
+      </select><br><br>
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" placeholder="Please leave any comments here"></textarea>
+
+      <input type="checkbox" id="checkbox-01" name="checkbox[]" value="01" checked><label for="checkbox-01" tabindex="">Checkbox 01</label>
+      <input type="checkbox" id="checkbox-02" name="checkbox[]" value="02"><label for="checkbox-02">Checkbox 02</label>
+      <input type="checkbox" id="checkbox-03" name="checkbox[]" value="03"><label for="checkbox-03">Checkbox 03</label>
     <input type="checkbox" id="checkbox-04" name="checkbox[]" value="04" disabled><label for="checkbox-04">Checkbox 04 Disabled</label>
     <br><br>
 
@@ -179,26 +188,18 @@
     <label for="date-picker">Date Picker:</label>
     <input id="date-picker" type="date">
 
-    <label for="email">Email:</label>
-    <input id="email" type="email">
+    <label for="email">Readonly / Email:</label>
+    <input id="email" readonly type="email" value="readonly@email.com">
 
     <label for="file">File Chooser:</label>
     <input id="file" type="file">
 
-    <label for="number">Number:</label>
-    <input id="number" type="number">
 
     <label for="password">Password:</label>
     <input id="password" type="password">
 
     <label for="range">Range:</label>
     <input id="range" type="range">
-
-    <label for="telephone">Telephone:</label>
-    <input id="telephone" type="tel">
-
-    <label for="url">URL:</label>
-    <input id="url" type="url">
 
 
     <label for="disabled-input">Disabled Input:</label>
@@ -214,6 +215,7 @@
     <button type="button">Plain Button</button>
     <button type="submit">Submit Button</button>
     <button type="button" disabled>Disabled Button</button>
+  </fieldset>
   </form>
 
 
@@ -238,7 +240,6 @@
       TODO - add ul/li tags
       TODO - add ol/li tag
       TODO - add abbr tag
-      TODO - add cite tag
       TODO - add audio tag
       TODO - add img tag
       TODO - add video tag

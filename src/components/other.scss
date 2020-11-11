@@ -7,11 +7,36 @@ dd{
   margin:0.5rem 0rem 0.5rem 1.5rem;
 }
 
+details{
+  background-color: var(--background-mid);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-colour);
+  color: var(--text-main);
+  padding:0.9rem;
+  summary{
+    color:var(--text-emphasis);
+  }
+  &[open]{
+    summary{
+      padding-bottom:0.45rem;
+      border-bottom:1px solid var(--border-colour);
+      margin-bottom:0.45rem;
+    }
+  }
+}
+
 blockquote {
   border-left: 0.25rem solid var(--border-colour);
   margin: 0;
   padding: 0.5rem 0 0.5rem 1.5rem;
   font-style: italic;
+  background-color: var(--background-mid);
+  cite{
+    width:100%;
+    display:block;
+    margin-top:0.5rem;
+    color:var(--text-muted);
+  }
 }
 
 pre,

@@ -108,11 +108,34 @@ dd {
   margin: 0.5rem 0rem 0.5rem 1.5rem;
 }
 
+details {
+  background-color: var(--background-mid);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-colour);
+  color: var(--text-main);
+  padding: 0.9rem;
+}
+details summary {
+  color: var(--text-emphasis);
+}
+details[open] summary {
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border-colour);
+  margin-bottom: 0.45rem;
+}
+
 blockquote {
   border-left: 0.25rem solid var(--border-colour);
   margin: 0;
   padding: 0.5rem 0 0.5rem 1.5rem;
   font-style: italic;
+  background-color: var(--background-mid);
+}
+blockquote cite {
+  width: 100%;
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
 }
 
 pre,
@@ -208,8 +231,11 @@ fieldset {
 form {
   display: block;
   margin-top: 0;
-  border-radius: 5px;
-  padding-top: 20px;
+}
+form fieldset {
+  border: 1px solid var(--border-colour);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
 }
 form label {
   display: block;
@@ -221,12 +247,14 @@ form textarea:focus,
 form select:focus {
   outline: none;
 }
+form input, form select, form textarea {
+  margin: 0 0 0.5rem 0;
+}
 form input[type=text],
 form input[type=color],
 form input[type=date],
 form input[type=datetime-local],
 form input[type=email],
-form input[type=file],
 form input[type=month],
 form input[type=number],
 form input[type=password],
@@ -250,7 +278,6 @@ form input[type=color]:focus,
 form input[type=date]:focus,
 form input[type=datetime-local]:focus,
 form input[type=email]:focus,
-form input[type=file]:focus,
 form input[type=month]:focus,
 form input[type=number]:focus,
 form input[type=password]:focus,
@@ -269,7 +296,6 @@ form input[type=color][disabled],
 form input[type=date][disabled],
 form input[type=datetime-local][disabled],
 form input[type=email][disabled],
-form input[type=file][disabled],
 form input[type=month][disabled],
 form input[type=number][disabled],
 form input[type=password][disabled],

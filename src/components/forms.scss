@@ -4,8 +4,12 @@ fieldset{
 form {
   display: block;
   margin-top: 0;
-  border-radius: 5px;
-  padding-top: 20px;
+
+  fieldset{
+    border:1px solid var(--border-colour);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+  }
 
   label {
     display: block;
@@ -21,12 +25,15 @@ form {
     }
   }
 
+  input,select,textarea{
+    margin: 0 0 0.5rem 0;
+  }
+
   input[type="text"],
   input[type="color"],
   input[type="date"],
   input[type="datetime-local"],
   input[type="email"],
-  input[type="file"],
   input[type="month"],
   input[type="number"],
   input[type="password"],
