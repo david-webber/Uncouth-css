@@ -8,8 +8,8 @@
     "sass": "^1.26.11"
   },
   "scripts": {
-    "watch": "sass --watch ./src/main.scss ./dist/main.css",
-    "compile": "sass ./src/main.scss ./dist/main.css"
+    "watch": "sass --watch ./src/main.scss ./dist/main-auto.css",
+    "compile": "sass ./src/main.scss ./dist/main-auto.css"
   },
   "repository": {
     "type": "git",
