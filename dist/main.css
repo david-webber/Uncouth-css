@@ -1,12 +1,14 @@
+@charset "UTF-8";
 :root {
-  --background-main: #f4f4f4;
+  --background-main: #f1f3f3;
   --background-mid: #fcfcfc;
-  --background-dark: rgb(231, 231, 231);
+  --background-dark: rgb(224, 224, 224);
   --text-main: #222;
   --text-emphasis: #000;
-  --text-muted: #6a6a6a;
-  --border-colour: #d5d5d5;
-  --action-colour: #2549ac;
+  --text-muted: #616161;
+  --border-colour: #9ea4a8;
+  --action-colour: #3766e7;
+  --input-background: var(--background-mid);
   --input-color: var(--text-main);
   --input-focus-color: rgba(37, 73, 172, 0.4);
   --input-disabled-background: #ececec;
@@ -111,7 +113,6 @@ dd {
 details {
   background-color: var(--background-mid);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
   color: var(--text-main);
   padding: 0.9rem;
 }
@@ -132,8 +133,6 @@ blockquote {
   background-color: var(--background-mid);
 }
 blockquote cite {
-  width: 100%;
-  display: block;
   margin-top: 0.5rem;
   color: var(--text-muted);
 }
@@ -142,7 +141,6 @@ pre,
 code {
   background-color: var(--background-mid);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
   color: var(--text-muted);
   padding: 0.1rem 0.2rem;
   overflow-x: auto;
@@ -251,7 +249,6 @@ form input, form select, form textarea {
   margin: 0 0 0.5rem 0;
 }
 form input[type=text],
-form input[type=color],
 form input[type=date],
 form input[type=datetime-local],
 form input[type=email],
@@ -259,6 +256,7 @@ form input[type=month],
 form input[type=number],
 form input[type=password],
 form input[type=search],
+form input[type=color],
 form input[type=tel],
 form input[type=time],
 form input[type=url],
@@ -274,7 +272,6 @@ form textarea {
   color: var(--text-main);
 }
 form input[type=text]:focus,
-form input[type=color]:focus,
 form input[type=date]:focus,
 form input[type=datetime-local]:focus,
 form input[type=email]:focus,
@@ -282,6 +279,7 @@ form input[type=month]:focus,
 form input[type=number]:focus,
 form input[type=password]:focus,
 form input[type=search]:focus,
+form input[type=color]:focus,
 form input[type=tel]:focus,
 form input[type=time]:focus,
 form input[type=url]:focus,
@@ -292,7 +290,6 @@ form textarea:focus {
   box-shadow: 0 0 0 2px var(--input-focus-color);
 }
 form input[type=text][disabled],
-form input[type=color][disabled],
 form input[type=date][disabled],
 form input[type=datetime-local][disabled],
 form input[type=email][disabled],
@@ -300,6 +297,7 @@ form input[type=month][disabled],
 form input[type=number][disabled],
 form input[type=password][disabled],
 form input[type=search][disabled],
+form input[type=color][disabled],
 form input[type=tel][disabled],
 form input[type=time][disabled],
 form input[type=url][disabled],
@@ -311,7 +309,10 @@ form textarea[disabled] {
   cursor: not-allowed;
 }
 form input[type=color] {
-  padding: none;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+  width: auto;
+  min-width: 5rem;
 }
 form input[type=range] {
   -webkit-appearance: none;
@@ -393,11 +394,6 @@ form input[type=checkbox],
 form input[type=radio] {
   opacity: 0;
 }
-form input[type=checkbox]:focus + label:before,
-form input[type=radio]:focus + label:before {
-  border-color: var(--input-focus-color);
-  box-shadow: 0 0 0 2px var(--input-focus-color);
-}
 form input[type=checkbox][disabled] + label,
 form input[type=radio][disabled] + label {
   opacity: 0.5;
@@ -406,7 +402,7 @@ form input[type=radio][disabled] + label {
 form input[type=checkbox] + label,
 form input[type=radio] + label {
   display: inline-block;
-  margin-left: 0.2rem;
+  margin-left: 1rem;
   margin-right: 1rem;
   position: relative;
 }
@@ -415,34 +411,32 @@ form input[type=radio] + label:before {
   content: "";
   position: absolute;
   top: 50%;
-  right: 100%;
-  width: 18px;
-  height: 18px;
-  background: var(--text-main);
+  left: -1.5rem;
+  width: 1em;
+  height: 1em;
+  background: var(--input-background);
   border-radius: var(--border-radius);
-  transform: translate(0, -50%);
-  margin-top: -0.075rem;
-  margin-right: 0.2rem;
+  border: 1px solid var(--border-colour);
+  transform: translate(0%, -50%);
 }
 form input[type=checkbox] + label:after {
   display: none;
-  content: "";
+  content: "✓";
+  color: var(--background-main);
   position: absolute;
+  width: 1em;
+  height: 1em;
   top: 50%;
-  right: 100%;
-  width: 3px;
-  height: 8px;
-  transform: translate(0, -50%) rotateZ(40deg);
-  margin-top: -0.135rem;
-  margin-right: 0.63rem;
-  border-right: 4px solid var(--action-button-color);
-  border-bottom: 4px solid var(--action-button-color);
+  left: -0.5rem;
+  place-items: center;
+  font-size: 0.9rem;
+  transform: translate(-100%, -50%);
 }
 form input[type=checkbox]:checked + label:before {
   background: var(--action-button-background);
 }
 form input[type=checkbox]:checked + label:after {
-  display: block;
+  display: flex;
 }
 form input[type=radio] + label:before {
   border-radius: 50%;
@@ -452,14 +446,13 @@ form input[type=radio] + label:after {
   content: "";
   position: absolute;
   top: 50%;
-  right: 100%;
-  width: 9px;
-  height: 9px;
-  transform: translate(0, -50%);
-  background: var(--action-button-color);
-  margin-top: -0.075rem;
-  margin-right: 0.55rem;
+  left: -1.25em;
+  width: 0.5em;
+  height: 0.5em;
+  transform: translate(0%, -50%);
   border-radius: 50%;
+  background-color: var(--background-main);
+  border: 1px solid transparent;
 }
 form input[type=radio]:checked + label:before {
   background: var(--action-button-background);
