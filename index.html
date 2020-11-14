@@ -5,15 +5,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Uncouth CSS Demo</title>
-  <link rel="stylesheet" href="./dist/main-auto.css" type="text/css" />
+  <link rel="stylesheet" id="theme" href="./dist/main-auto.css" type="text/css" />
+  <style>
+    .toggle-theme{
+      margin-right:0.5rem;
+    }
+  </style>
 </head>
 
 <body>
   <h1 id="UncouthCSS">Uncouth CSS</h1>
   <p>A(nother) minimal, classless css library.</p>
   <h4>Yeah, but why?</h4>
-  <p>I found myself applying the same base styles to a lot of demos and new projects I wa creating. Use this to improve markup sites, or use as it as a base style for your next project!</p>
-  <a href="https://github.com/david-webber/Uncouth-css">Download</a>
+  <p>I found myself applying the same base styles to a lot of demos and new projects I wa creating. Use this to improve markup sites, or use as it as a base style for your next project! <a href="https://github.com/david-webber/Uncouth-css">View on GitHub</a></p>
+
+  <h5>Themes</h5>
+  <p>There are currently two themes 'light' and 'dark', the main-auto.css file will automatically detect the preferred browser theme.</p>
+  <button class="toggle-theme" data-theme="light">Light Theme</button><button class="toggle-theme" data-theme="dark">Dark Theme</button>
+  <button class="toggle-theme" data-theme="">Remove Uncouth Completely</button>
+  <br/>
+
+
+
   <hr />
   <h3 id="navigation">Navigation</h3>
   <p>Unordered lists within a <code>&lt;nav&gt;</code> tag will be displayed as 'inline-block':</p>
@@ -208,24 +221,15 @@
     </fieldset>
   </form>
   <br /><br />
-  <!--
-      TODO - add address tag
-      TODO - add dd tag
-      TODO - add dl tag
-      TODO - add dt tag
-      TODO - add figure & figcaption tag
-      TODO - add hr tag
-      TODO - add ul/li tags
-      TODO - add ol/li tag
-      TODO - add abbr tag
-      TODO - add audio tag
-      TODO - add img tag
-      TODO - add video tag
-      TODO - add track tag
-      TODO - add details / summary tag
-      TODO - add dialogue tag
-      TODO - add mark tag
-    -->
+
+  <script>
+    const toggleBtns = document.querySelectorAll('.toggle-theme');
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', function(){
+        document.getElementById('theme').setAttribute('href', `./dist/main-${this.dataset.theme}.css`);
+      })
+    })
+  </script>
 </body>
 
 </html>
