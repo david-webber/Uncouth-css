@@ -270,45 +270,44 @@ form {
     }
 
   }
+}
 
-  %button {
-    border-radius: var(--border-radius);
-    padding: 0.75rem;
-    border: none;
-    width: auto;
-    cursor: pointer;
+%button {
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  border: none;
+  width: auto;
+  cursor: pointer;
 
-    &:focus {
-      border-color: var(--input-focus-color);
-      box-shadow: 0 0 0 2px var(--input-focus-color);
-    }
-
-    &[disabled] {
-      background: var(--button-disabled-background);
-      color: var(--button-disabled-color);
-      cursor: not-allowed;
-    }
+  &:focus {
+    border-color: var(--input-focus-color);
+    box-shadow: 0 0 0 2px var(--input-focus-color);
   }
 
-  input[type="submit"],
-  button[type="submit"] {
-    @extend %button;
-    background: var(--action-button-background);
-    color: var(--action-button-color);
+  &[disabled] {
+    background: var(--button-disabled-background);
+    color: var(--button-disabled-color);
+    cursor: not-allowed;
   }
+}
 
-  input[type="button"],
-  button[type="button"] {
-    @extend %button;
-    background: var(--secondary-button-background);
-    color: var(--secondary-button-color);
-  }
+input[type="submit"],
+button[type="submit"] {
+  @extend %button;
+  background: var(--action-button-background);
+  color: var(--action-button-color);
+}
 
-  input[type="reset"],
-  button[type="reset"] {
-    @extend %button;
-    background: var(--button-background);
-    color: var(--button-color);
-  }
+input[type="button"],
+button{
+  @extend %button;
+  background: var(--secondary-button-background);
+  color: var(--secondary-button-color);
+}
 
+input[type="reset"],
+button[type="reset"] {
+  @extend %button;
+  background: var(--button-background);
+  color: var(--button-color);
 }
