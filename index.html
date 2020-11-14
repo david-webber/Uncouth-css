@@ -10,26 +10,39 @@
 
 <body>
 
-  <h1>Uncouth CSS</h1>
-  <p>A(nother) minimalist, classless css library to improve markup sites, or use as a base style for your next project!</p>
-  <a href="#">Download</a>
+  <h1 id="UncouthCSS">Uncouth CSS</h1>
+  <p>A(nother) minimal, classless css library.</p>
+  <h4>Yeah, but why?</h4>
+  <p>I found myself applying the same base styles to a lot of demos and new projects I wa creating. Use this to improve markup sites, or use as it as a base style for your next project!</p>
+  <a href="https://github.com/david-webber/Uncouth-css">Download</a>
 
 
 
-  <h3>Navigation</h3>
+  <hr/>
+  <h3 id="navigation">Navigation</h3>
+  <p>Unordered lists within a <code>&lt;nav&gt;</code> tag will be displayed as 'inline-block':</p>
   <nav>
     <ul>
       <li>
-        <a href="#">Lists</a>
+        <a href="#Lists">Lists</a>
       </li>
       <li>
-        <a href="#">Tables</a>
+        <a href="#Tables">Tables</a>
       </li>
       <li>
-        <a href="#">Typography</a>
+        <a href="#Typogrpahy">Typography</a>
       </li>
       <li>
-        <a href="#">Media</a>
+        <a href="#Media">Media</a>
+      </li>
+      <li>
+        <a href="#Pre+Code">Preformatted + Code</a>
+      </li>
+      <li>
+        <a href="#Detail+Summary">Detail + Summary</a>
+      </li>
+      <li>
+        <a href="#Forms">Forms</a>
       </li>
     </ul>
   </nav>
@@ -37,7 +50,7 @@
 
 
   <hr />
-  <h3>Lists</h3>
+  <h3 id="Lists">Lists</h3>
   <p>Unordered Lists <code>&lt;ul&gt;&lt;li&gt;</code></p>
   <ul>
     <li>Bulleted List item</li>
@@ -58,7 +71,7 @@
     <dd>This is the second descriptive list</dd>
   </dl>
   <hr />
-  <h3>Tables</h3>
+  <h3 id="Tables">Tables</h3>
   <table>
     <caption>
       An example table with a caption
@@ -92,62 +105,103 @@
     </tfoot>
   </table>
   <hr />
-  <h3>Typography</h3>
+  <h3 id="Typography">Typography</h3>
   <h6>Paragraphs &amp; inline text elements:</h6>
   <p>
     Here is some example text within a paragraph tag. This paragraph contains an inline <strong>strong</strong> tag and an inline <i>italic</i> tag.</p>
   <p>
-    An example of a paragraph that has inline code <code>&lt;code&gt;</code> block within it.
-  </p>
-  <p>
-    <details>
-      <summary>Show Headings</summary>
-      <h1>Heading 1 <small>Small</small></h1>
-      <h2>Heading 2 <small>Small</small></h2>
-      <h3>Heading 3 <small>Small</small></h3>
-      <h4>Heading 4 <small>Small</small></h4>
-      <h5>Heading 5 <small>Small</small></h5>
-      <h6>Heading 6 <small>Small</small></h6>
-    </details>
+
+
+    <h1>Heading 1 <small>Small</small></h1>
+    <h2>Heading 2 <small>Small</small></h2>
+    <h3>Heading 3 <small>Small</small></h3>
+    <h4>Heading 4 <small>Small</small></h4>
+    <h5>Heading 5 <small>Small</small></h5>
+    <h6>Heading 6 <small>Small</small></h6>
+
   </p>
   <h6>Quotes:</h6>
   <blockquote>
     <p>
       "An SSL error occurred and the server could not be reached"
     </p>
-    -
-    <cite>Albert Einstein</cite>
+    <p>-
+    <cite>Albert Einstein</cite></p>
   </blockquote>
 
   <hr />
 
-  <h3>Media</h3>
+  <h3 id="Media">Media</h3>
   <p>Images, videos and audio elements are responsive:</p>
-  <p></p>
+  <h5>Image <code>&lt;img&gt;</code></h5>
   <img src="https://picsum.photos/800/250" />
   <figcaption>Image powered by <a href="https://picsum.photos/" target="_blank" rel="noopener noreferrer">https://picsum.photos/</a></figcaption>
 
-  <hr />
-  <h3>Preformatted / Code</h3>
+  <h5>Video <code>&lt;video&gt;</code></h5>
+  <video  controls>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+    type="video/webm">
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+    type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Video source from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank" rel="noopener noreferrer"></a>>https://developer. mozilla.org/en-US/docs/Web/HTML/Element/video</a></figcaption>
 
+  <h5>Audio <code>&lt;audio&gt;</code></h5>
+  <audio
+    controls
+    src="">
+    Your browser does not support the
+  </audio>
+<figcaption>This example does not have an audio source attached.</figcaption>
+
+
+
+
+  <hr />
+  <h3 id="Pre+Code">Preformatted / Code <small><code>&lt;pre&gt;&lt;/pre&gt;&lt;code&gt;&lt;/code&gt;</code></small></h3>
+  <p>
+    An example of a paragraph that has inline code <code>&lt;code&gt;</code> block within it.
+  </p>
+  <p>Preformatted text</p>
   <pre>
-    Preformatted text, with a nested &lt;code&gt; block.
-      <code>[{
-        example:array,
-        },
-        {
-          of: objects
-        }]</code>
-      </pre>
+         ___  ___  ________   ________  ________  ___  ___  _________  ___  ___
+        |\  \|\  \|\   ___  \|\   ____\|\   __  \|\  \|\  \|\___   ___\\  \|\  \
+        \ \  \\\  \ \  \\ \  \ \  \___|\ \  \|\  \ \  \\\  \|___ \  \_\ \  \\\  \
+         \ \  \\\  \ \  \\ \  \ \  \    \ \  \\\  \ \  \\\  \   \ \  \ \ \   __  \
+          \ \  \\\  \ \  \\ \  \ \  \____\ \  \\\  \ \  \\\  \   \ \  \ \ \  \ \  \
+           \ \_______\ \__\\ \__\ \_______\ \_______\ \_______\   \ \__\ \ \__\ \__\
+            \|_______|\|__| \|__|\|_______|\|_______|\|_______|    \|__|  \|__|\|__|
+  </pre>
 
-  <hr />
-  <h3>Forms</h3>
-  <form>
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname" placeholder="John">
 
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname" placeholder="Doe">
+
+
+
+
+
+<hr/>
+
+
+  <h3 id="Detail+Summary">Details / Summary <small><code>&lt;details&gt;&lt;summary&gt;&lt;/summary&gt;&lt;/details&gt;</code></small></h3>
+  <details>
+    <summary>Interesting Summary! - Click to toggle the details</summary>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore error totam ipsa quas eligendi. Tempora ut quod vero aliquam tenetur, maiores animi, voluptatum unde asperiores natus commodi fuga quis labore?</p>
+  </details>
+
+
+
+
+
+
+
+
+
+
+
+
+  <hr/>
+  <h3 id="Forms">Forms</h3>
 
 
 
@@ -155,72 +209,64 @@
   <form>
     <fieldset>
       <legend>Form</legend>
-      <label for="fname">Name:</label>
-      <input type="text" id="fname" name="fname" placeholder="John">
+      <label for="text-input">Text Input:</label>
+      <input type="text" id="text-input" name="text-input" placeholder="Text Input" required>
 
+      <label for="textarea">Textarea:</label>
+      <textarea required id="textarea" name="textarea" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem molestias cupiditate nam facilis quam, debitis, inventore consequatur soluta fuga dolorem nobis. Assumenda in ut illo dolore aliquam sequi, tempora vel."></textarea>
 
-      <label for="countries">Countries:</label>
-      <select id="countries" name="countries">
-        <option>Japan</option>
-        <option>India</option>
-        <option>Italy</option>
-        <option>United States</option>
+      <label for="select">Select:</label>
+      <select id="select" name="select" required>
+        <option value="" selected disabled>Please select</option>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
       </select><br><br>
 
-      <label for="comments">Comments:</label>
-      <textarea id="comments" name="comments" placeholder="Please leave any comments here"></textarea>
-
-      <input type="checkbox" id="checkbox-01" name="checkbox[]" value="01" checked><label for="checkbox-01" tabindex="">Checkbox 01</label>
+      <input type="checkbox" id="checkbox-01" name="checkbox[]" value="01" required><label for="checkbox-01" tabindex="">Checkbox 01</label>
       <input type="checkbox" id="checkbox-02" name="checkbox[]" value="02"><label for="checkbox-02">Checkbox 02</label>
-      <input type="checkbox" id="checkbox-03" name="checkbox[]" value="03"><label for="checkbox-03">Checkbox 03</label>
-    <input type="checkbox" id="checkbox-04" name="checkbox[]" value="04" disabled><label for="checkbox-04">Checkbox 04 Disabled</label>
-    <br><br>
+      <input type="checkbox" id="checkbox-04" name="checkbox[]" value="04" disabled><label for="checkbox-04">Checkbox 04 Disabled</label>
+      <br><br>
 
-    <input type="radio" id="radio-01" name="radio" value="01" checked><label for="radio-01">Radio 01</label>
-    <input type="radio" id="radio-02" name="radio" value="02"><label for="radio-02">Radio 02</label>
-    <input type="radio" id="radio-03" name="radio" value="03"><label for="radio-03">Radio 03</label>
-    <input type="radio" id="radio-04" name="radio" value="04" disabled><label for="radio-04">Radio 04 Disabled</label>
+      <input type="radio" id="radio-01" name="radio" value="01" required><label for="radio-01">Radio 01</label><br/>
+      <input type="radio" id="radio-02" name="radio" value="02"><label for="radio-02">Radio 02</label><br/>
+      <input type="radio" id="radio-04" name="radio" value="04" disabled><label for="radio-04">Radio 04 Disabled</label><br/>
 
-    <br><br>
-    <label for="color">Color Picker:</label>
-    <input id="color" type="color">
-
-    <label for="date-picker">Date Picker:</label>
-    <input id="date-picker" type="date">
-
-    <label for="email">Readonly / Email:</label>
-    <input id="email" readonly type="email" value="readonly@email.com">
-
-    <label for="file">File Chooser:</label>
-    <input id="file" type="file">
+      <br><br>
+      <label for="color">Color Picker:</label>
+      <input id="color" value="#C8F1F3" type="color">
 
 
-    <label for="password">Password:</label>
-    <input id="password" type="password">
-
-    <label for="range">Range:</label>
-    <input id="range" type="range">
+      <label for="file">File Chooser:</label>
+      <input id="file" type="file">
 
 
-    <label for="disabled-input">Disabled Input:</label>
-    <input id="disabled-input" type="text" disabled value="Disabled input content">
+      <label for="range">Range:</label>
+      <input id="range" type="range">
 
-    <input type="reset" value="Reset Input">
-    <input type="button" value="Plain Button Input">
-    <input type="submit" value="Submit Input">
-    <input type="button" disabled value="Disabled Button Input">
-    <br><br>
 
-    <button type="reset">Reset Button</button>
-    <button type="button">Plain Button</button>
-    <button type="submit">Submit Button</button>
-    <button type="button" disabled>Disabled Button</button>
-  </fieldset>
+      <label for="disabled-input">Disabled Input:</label>
+      <input id="disabled-input" type="text" disabled value="Unique Identifier">
+
+
+      <label>Input buttons:</label>
+      <input type="reset" value="Reset Input">
+      <input type="button" value="Plain Button Input">
+      <input type="submit" value="Submit Input">
+      <input type="button" disabled value="Disabled Button Input">
+      <br><br>
+
+      <label>Button Elements:</label>
+      <button type="reset">Reset Button</button>
+      <button type="button">Plain Button</button>
+      <button type="submit">Submit Button</button>
+      <button type="button" disabled>Disabled Button</button>
+    </fieldset>
   </form>
 
 
 
-
+   <br/><br/>
 
 
 
