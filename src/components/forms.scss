@@ -30,7 +30,6 @@ form {
   }
 
   input[type="text"],
-  input[type="color"],
   input[type="date"],
   input[type="datetime-local"],
   input[type="email"],
@@ -38,6 +37,7 @@ form {
   input[type="number"],
   input[type="password"],
   input[type="search"],
+  input[type="color"],
   input[type="tel"],
   input[type="time"],
   input[type="url"],
@@ -66,8 +66,12 @@ form {
   }
 
   input[type="color"]{
-    padding:none;
+    padding:0;
+    margin: 0 0 0.5rem 0;
+    width:auto;
+    min-width:5rem;
   }
+
 
   input[type="range"] {
     -webkit-appearance: none;
@@ -169,14 +173,7 @@ form {
   input[type="radio"] {
     opacity: 0;
 
-    &:focus {
-      +label {
-        &:before {
-          border-color: var(--input-focus-color);
-          box-shadow: 0 0 0 2px var(--input-focus-color);
-        }
-      }
-    }
+
 
     &[disabled] {
       +label {
@@ -187,7 +184,7 @@ form {
 
     +label {
       display: inline-block;
-      margin-left: 0.2rem;
+      margin-left: 1rem;
       margin-right: 1rem;
       position: relative;
 
@@ -195,14 +192,13 @@ form {
         content: '';
         position: absolute;
         top: 50%;
-        right: 100%;
-        width: 18px;
-        height: 18px;
-        background: var(--text-main);
+        left: -1.5rem;
+        width: 1em;
+        height: 1em;
+        background: var(--input-background);
         border-radius: var(--border-radius);
-        transform: translate(0, -50%);
-        margin-top: -0.075rem;
-        margin-right: 0.2rem;
+        border:1px solid var(--border-colour);
+        transform: translate(0%, -50%);
       }
     }
   }
@@ -211,17 +207,17 @@ form {
     +label {
       &:after {
         display: none;
-        content: '';
+        content: '✓';
+        color:var(--background-main);
         position: absolute;
+        width:1em;
+        height:1em;
         top: 50%;
-        right: 100%;
-        width: 3px;
-        height: 8px;
-        transform: translate(0, -50%) rotateZ(40deg);
-        margin-top: -0.135rem;
-        margin-right: 0.63rem;
-        border-right: 4px solid var(--action-button-color);
-        border-bottom: 4px solid var(--action-button-color);
+        left: -0.5rem;
+        place-items:center;
+        font-size:0.9rem;
+        transform: translate(-100%, -50%);
+
       }
     }
 
@@ -233,7 +229,7 @@ form {
         }
 
         &:after {
-          display: block;
+          display: flex;
         }
       }
     }
@@ -252,24 +248,21 @@ form {
         content: '';
         position: absolute;
         top: 50%;
-        right: 100%;
-        width: 9px;
-        height: 9px;
-        transform: translate(0, -50%);
-        background: var(--action-button-color);
-        margin-top: -0.075rem;
-        margin-right: 0.55rem;
+        left: -1.25em;
+        width: 0.5em;
+        height: 0.5em;
+        transform: translate(0%, -50%);
         border-radius: 50%;
+        background-color:var(--background-main);
+        border:1px solid transparent;
       }
     }
 
     &:checked {
       +label {
-
         &:before {
           background: var(--action-button-background);
         }
-
         &:after {
           display: block;
         }
