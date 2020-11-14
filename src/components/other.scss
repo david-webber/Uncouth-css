@@ -10,7 +10,6 @@ dd{
 details{
   background-color: var(--background-mid);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
   color: var(--text-main);
   padding:0.9rem;
   summary{
@@ -32,8 +31,6 @@ blockquote {
   font-style: italic;
   background-color: var(--background-mid);
   cite{
-    width:100%;
-    display:block;
     margin-top:0.5rem;
     color:var(--text-muted);
   }
@@ -43,7 +40,6 @@ pre,
 code {
   background-color: var(--background-mid);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
   color: var(--text-muted);
   padding: 0.1rem 0.2rem;
   overflow-x:auto;
