@@ -1,8 +1,4 @@
-@import "./variables/light";
 
-@media (prefers-color-scheme: dark) {
-  @import "./variables/dark";
-}
 
 @import "./components/base";
 @import "./components/tables";
