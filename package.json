@@ -7,6 +7,8 @@
     "css-loader": "^5.0.1",
     "mini-css-extract-plugin": "^1.3.2",
     "node-sass": "^5.0.0",
+    "postcss": "^8.1.14",
+    "postcss-loader": "^4.1.0",
     "sass": "^1.26.11",
     "sass-loader": "^10.1.0",
     "webpack": "^5.10.0",
@@ -34,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/david-webber/Uncouth-css/issues"
   },
-  "homepage": "https://github.com/david-webber/Uncouth-css#readme"
+  "homepage": "https://github.com/david-webber/Uncouth-css#readme",
+  "dependencies": {
+    "postcss-preset-env": "^6.7.0"
+  }
 }
