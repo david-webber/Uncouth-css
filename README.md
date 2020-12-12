@@ -1,22 +1,22 @@
 # Uncouth-css
-Another classless CSS library.
 
-Slowly putting together a CSS library, feel free to contribute.
+Another classless CSS library.
 
 [Demo](https://david-webber.github.io/Uncouth-css/)
 
 ---
 
-Two scripts have been added to the package.json file to compile sass with default src and destination parameters:
+Compile the light theme only:
+`npm run light`
 
-Compile the sass using
-`npm run compile`
+Compile the dark theme only:
+`npm run dark`
 
-Watch & compile sass changes with
-`npm run watch`
+Compile the auto theme (defaults to light):
+`npm run auto`
 
-
-
+Compile all three:
+`npm run build`
 
 ## Contributing
 
