@@ -17,12 +17,11 @@
   <h1 id="UncouthCSS">Uncouth CSS</h1>
   <p>A(nother) minimal, classless css library.</p>
   <h4>Yeah, but why?</h4>
-  <p>I found myself applying the same base styles to a lot of demos and new projects I wa creating. Use this to improve markup sites, or use as it as a base style for your next project! <a href="https://github.com/david-webber/Uncouth-css">View on GitHub</a></p>
+  <p>I found myself applying the same base styles to a lot of demos and new projects I was creating. Use this to improve markup sites, or use as it as a base style for your next project! <a href="https://github.com/david-webber/Uncouth-css">View on GitHub</a></p>
 
   <h5>Themes</h5>
   <p>There are currently two themes 'light' and 'dark', the main-auto.css file will automatically detect the preferred browser theme.</p>
-  <button class="toggle-theme" data-theme="light">Light Theme</button><button class="toggle-theme" data-theme="dark">Dark Theme</button>
-  <button class="toggle-theme" data-theme="">Remove Uncouth Completely</button>
+  <button class="toggle-theme" data-theme="light">Light Theme</button><button class="toggle-theme" data-theme="dark">Dark Theme</button><button class="toggle-theme" data-theme="">Remove Uncouth Completely</button>
   <br/>
 
 
@@ -224,9 +223,9 @@
 
   <script>
     const toggleBtns = document.querySelectorAll('.toggle-theme');
-    toggleBtns.forEach(btn => {
+    toggleBtns.forEach(function(btn){
       btn.addEventListener('click', function(){
-        document.getElementById('theme').setAttribute('href', `./dist/main-${this.dataset.theme}.css`);
+        document.getElementById('theme').setAttribute('href', './dist/main-'+this.dataset.theme+'.css');
       })
     })
   </script>
