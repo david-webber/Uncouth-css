@@ -222,7 +222,7 @@
   <br /><br />
 
   <script>
-    const toggleBtns = document.querySelectorAll('.toggle-theme');
+    const toggleBtns = Array.prototype.slice.call(document.querySelectorAll('.toggle-theme'));
     toggleBtns.forEach(function(btn){
       btn.addEventListener('click', function(){
         document.getElementById('theme').setAttribute('href', './dist/main-'+this.dataset.theme+'.css');
